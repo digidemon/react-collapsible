@@ -173,7 +173,8 @@ var Collapsible = createReactClass({
       shouldSwitchAutoOnNextCycle: true,
       height: this.refs.inner.offsetHeight,
       overflow: 'hidden',
-    }, this.props.onClose);
+    });
+    this.props.onClose && this.props.onClose();
   },
 
   openCollapsible: function() {
@@ -182,7 +183,8 @@ var Collapsible = createReactClass({
       transition: 'height ' + this.props.transitionTime + 'ms ' + this.props.easing,
       isClosed: false,
       hasBeenOpened: true
-    }, this.props.onOpen);
+    });
+    this.props.onOpen && this.props.onOpen();
   },
 
   makeResponsive: function() {
